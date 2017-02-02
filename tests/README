@@ -1,0 +1,62 @@
+The following are examples of gservices.
+
+Client and Server for local communication.
+localClient.C
+localServer.C
+localServer2.C (includes threads)
+
+Client and Server for remote communication using syncronous protocol.
+remoteClient.C
+remoteServer.C
+
+Client and Server for remote communication using asynchronous protocol.
+remoteClient2.C
+remoteServer2.C
+
+Client and Server for remote communication using asynchronous protocol,
+and forwarding the request to another process.
+remoteFwClient.C
+remoteFwServer.C
+
+The simplest Client and Server models for remote communication using 
+synchronous communication.
+simpleRemClient.C
+simpleRemServer.C
+
+
+In order to compile these examples remember to check the following:
+1) Have nana library compiled and installed. 
+   remeber to configure like this:
+
+   $./configure --enable-rdtsc
+
+   so that you can include time profiling functions.
+
+   Also you have to modify these two archives:
+   /usr/local/include/nana-config.h
+
+   in line 80 change 
+
+   #define ALWAYS_INCLUDE_MALLOC/* no arguments */ 1
+
+   by 
+
+   #define ALWAYS_INCLUDE_MALLOC/* no arguments */ 0 
+
+   There is another syntactic error in 
+
+   /usr/local/include/cycles.h
+
+   in line 101 change
+
+   #ifdef _cplusplus
+
+   by
+
+   #ifdef __cplusplus //note the extra underscore "_"
+
+2) Compile and install the Aleph Library (including the IPC system).
+
+any comments and questions are welcomed to:
+amoret@cemisid.ing.ula.ve
+Andres Arcia.

@@ -1,0 +1,17 @@
+OPTIONS=        -g -DDEBUG -DMESSAGES -DWITH_NANA -O0
+
+DEFINES= 	$(OPTIONS) -Wall -Wshadow -Wtraditional\
+		-Wmissing-prototypes -Wmissing-declarations -Wcast-align 
+
+# include "../srcDefs"
+
+LOCALLIBS=	$(TOP)/lib/libgservices_d.a $(TOP)/lib/libipc_d.a $(TOP)/lib/libAleph_d.a 
+
+SYSLIBS=	-lnana -lstdc++ -ldmallocth -lpthread -lc
+
+DEPLIBS= 	$(TOP)/lib/libAleph_d.a 
+
+IPC_CLIENT_LIB = $(TOP)/lib/libipc_d.a
+
+# include "../tgtDefs"
+

@@ -1,0 +1,48 @@
+# define IHaveSubdirs
+# define PassCDebugFlags  'CDEBUGFLAGS=$(CDEBUGFLAGS)'
+
+SUBDIRS=	unshared shared debugger profiled 
+
+# include "srcDefs"
+
+AllTarget(links)
+
+MakeSubdirs($(SUBDIRS))
+
+DependSubdirs($(SUBDIRS))
+
+links::
+	for i in $(SUBDIRS) ;	\					@@\
+	do			\					@@\
+	cd $$i;			\					@@\
+	for f in $(SRCS);	\					@@\
+	do			\					@@\
+	$(RM) $$f;		\					@@\
+	$(LN) ../$$f $$f;	\					@@\
+	done;			\					@@\
+	cd ..;			\					@@\
+	done
+
+cleanLinks::
+	for i in $(SUBDIRS) ;	\					@@\
+	do			\					@@\
+	cd $$i;			\					@@\
+	$(RM) *.[HC];		\					@@\
+	cd ..;			\					@@\
+	done
+
+install:: links
+
+Makefiles:: links
+
+clean:: cleanLinks
+
+
+
+
+
+
+
+
+
+

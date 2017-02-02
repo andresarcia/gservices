@@ -1,0 +1,32 @@
+INCLUDES= 	-I$(TOP)/../gservices/include\
+		-I$(TOP)/../aleph\
+		-I$(TOP)/../gservices/tests
+
+LIBALEPH=	$(TOP)/../../../../lib 
+
+OBJS=		localClient.o\
+		remoteClient.o\
+		remoteFwServer.o\
+		simpleRemClient.o\
+		localServer.o\
+		remoteClient2.o\
+		remoteServer.o\
+		simpleRemServer.o\
+		localServer2.o\
+		remoteFwClient.o\
+		remoteServer2.o\
+		testThread.o
+
+SRCS=		localClient.C\
+		remoteClient.C\
+		remoteFwServer.C\
+		simpleRemClient.C\
+		localServer.C\
+		remoteClient2.C\
+		remoteServer.C\
+		simpleRemServer.C\
+		localServer2.C\
+		remoteFwClient.C\
+		remoteServer2.C\
+		testThread.C
+

@@ -1,0 +1,25 @@
+INCLUDES= 	-I$(TOP)/../gservices/include\
+		-I$(TOP)/../aleph
+		
+
+LIBALEPH=	$(TOP)/../../lib
+
+OBJS_FOR_GENERIC_SERV =	safe_memory_alloc.o\
+			reception_point.o local_access_point.o\
+			local_reception_point.o\
+			local_readwrite.o local_binding.o access_point.o\
+			binding_point.o remote_reception_point.o\
+			remote_binding.o remote_access_point.o\
+
+SRCS =		safe_memory_alloc.C\
+	 	reception_point.C\
+		local_access_point.C\
+		local_reception_point.C\
+		local_readwrite.C\
+	 	local_binding.C\
+		access_point.C\
+		binding_point.C\
+		remote_reception_point.C\
+		remote_binding.C\
+		remote_access_point.C
+		
